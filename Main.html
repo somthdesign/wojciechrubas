@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/main_stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/cursor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="preloader"></div>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="nav-mid">
+                <div class="left">
+                    <a href="">WOJCIECH<br>RUBAS</a>
+                </div>
+                <div class="right">
+                    <a href=""><span class="num">01</span><span class="link">O mnie</span></a>
+                    <a href=""><span class="num">02</span><span class="link">Prace</span></a>
+                    <a href=""><span class="num">03</span><span class="link">Kontakt</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="section-name-1"></div>
+        <div class="section-name-2"></div>
+        <div class="section-name-3"></div>
+        <div class="footer"></div>
+    </div>
+    
+    
+
+
+
+    <!--dot cursor-->
+    <script>
+        var cursor = new MouseFollower({
+            className: 'mf-cursor -exclusion',
+            speed: 0.5,
+            
+        });
+    </script>
+    <!--smooth scroll - only works when the height is set properly-->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script>
+        const lenis = new Lenis({
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        direction: 'vertical', // vertical, horizontal
+        gestureDirection: 'vertical', // vertical, horizontal, both
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+        })
+    
+        //get scroll value
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+        console.log({ scroll, limit, velocity, direction, progress })
+        })
+    
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+    
+        requestAnimationFrame(raf)
+    </script>
+
+
+
+</body>
+</html>
