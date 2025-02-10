@@ -1,4 +1,4 @@
-# [Visit my site 👋](somthdesign.github.io/wojciechrubas/)
+# [Visit my site 👋](https://somthdesign.github.io/wojciechrubas/)
 
 # About
 
