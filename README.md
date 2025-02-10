@@ -1,1 +1,1 @@
-somthdesign.github.com/wojciechrubas
+somthdesign.github.com/wojciechrubas/
